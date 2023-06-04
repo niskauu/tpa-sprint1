@@ -1,0 +1,9 @@
+Nombre: 
+Fecha de Nacimiento: 1/1/2000
+Habitaciones: 0
+Tiempo de Estadia: 
+Fecha: 1/1/2000
+Titular de la Tarjeta: 
+Numero de Tarjeta: 
+Fecha de Expiracion: 1/1/2000
+CVC: 

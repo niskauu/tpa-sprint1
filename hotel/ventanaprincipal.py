@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import QWidget , QLabel , QLineEdit , QHBoxLayout ,QVBoxLay
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt 
 from costos import costos
+from principal_pasajeros import *
 
 class ventanaprincipal(QDialog):   
 
@@ -20,7 +21,7 @@ class ventanaprincipal(QDialog):
 
         logo_label = QLabel()
         logo_pixmap = QPixmap("./hotel/logo.png")
-        logo_pixmap = logo_pixmap.scaled(50, 50, Qt.AspectRatioMode.KeepAspectRatio)
+        logo_pixmap = logo_pixmap.scaled(30, 30, Qt.AspectRatioMode.KeepAspectRatio)
         logo_label.setPixmap(logo_pixmap)
         logo_label.setAlignment(Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
 
@@ -51,6 +52,7 @@ class ventanaprincipal(QDialog):
         self.fecha_input = QDateEdit()
 
         pasajeros_button = QPushButton("Pasajeros")
+        pasajeros_button.clicked.connect(self.iniciarVentanaPasajero)
 
         costo_button = QPushButton("Calcular costo de estadia")
         costo_button.clicked.connect(self.iniciarventanacostos)
@@ -158,5 +160,9 @@ class ventanaprincipal(QDialog):
 
     def iniciarventanacostos(self):
         self.ventanacostos = costos()
-        self.ventanacostos.show()         
+        self.ventanacostos.show()        
+
+    def iniciarVentanaPasajero(self):
+        self.principal_pasajeros = PrincipalPasajeros()
+        self.principal_pasajeros.show()
                                   
